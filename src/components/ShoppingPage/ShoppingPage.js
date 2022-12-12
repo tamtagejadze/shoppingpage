@@ -14,15 +14,18 @@ function ShoppingPage() {
 
   return (
     <div>
+        <h2>დღის შეთავაზება</h2>
         <ul>
         {
         products.map(item =>( 
-            <li key={item.id} > 
-               <img src={item.image} />
-               <span>{item.title}</span>
-               <p>{item.description}</p>
-               <h3>{item.price}</h3>
-            </li>   
+            <div>
+                <li key={item.id} > 
+                <img src={item.image} />
+                <span>{item.title}</span>
+                <p>{item.description}</p>
+                <h3>{item.price}</h3>
+                </li> 
+            </div>  
         ))
         }
         </ul>

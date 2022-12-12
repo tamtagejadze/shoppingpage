@@ -1,11 +1,10 @@
 import './App.css';
-import ShoppingPage from './components/ShoppingPage/ShoppingPage';
+import Landing from './components/Landing';
 
 function App() {
   return (
     <div className="App">
-     <ShoppingPage />
-        
+    <Landing/>        
     </div>
   );
 }
