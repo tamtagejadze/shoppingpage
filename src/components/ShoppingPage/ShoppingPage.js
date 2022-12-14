@@ -3,7 +3,7 @@ import useRequest from '../../hooks/useRequest';
 
 function ShoppingPage() {
     const [products, setProducts] = useState([]);
-    const [data] = useRequest('GET', "/products") 
+    const [data] = useRequest('GET', "products") 
     console.log(data);
 
     useEffect(() =>{
@@ -13,23 +13,23 @@ function ShoppingPage() {
     },[data])
 
   return (
-    <div>
+    <>
         <h2>დღის შეთავაზება</h2>
-        <ul>
+        <div className='container'>
         {
         products.map(item =>( 
-            <div>
-                <li key={item.id} > 
-                <img src={item.image} />
+            <div className='items_div'>
+                <img className='img' src={item.image} />
                 <span>{item.title}</span>
                 <p>{item.description}</p>
                 <h3>{item.price}</h3>
-                </li> 
+                <button className='add_button'>Add To Cart</button>
             </div>  
         ))
         }
-        </ul>
-    </div>
+        
+        </div>
+    </>
   )
 }
 

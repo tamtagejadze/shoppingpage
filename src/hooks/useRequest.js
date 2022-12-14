@@ -7,7 +7,7 @@ export default function useRequest(method,endpoint,apidata){
         useEffect(() =>{
         apiRequests(method,endpoint,apidata)
             .then(response =>{
-                setData(response.data.data);
+                setData(response.data);
         })
         .catch(error => console.log(error))
     },[])
