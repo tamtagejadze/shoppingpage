@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import useRequest from '../../hooks/useRequest';
+import { useQuery } from 'react-query';
+import apiRequests from '../apiRequests';
 
 function ShoppingPage() {
     const [products, setProducts] = useState([]);
-    const [data] = useRequest('GET', "products") 
+    const {data, isLoading} = useQuery("products", () => apiRequests('GET', "products"));
+    
     console.log(data);
 
     useEffect(() =>{
@@ -15,8 +17,9 @@ function ShoppingPage() {
   return (
     <>
         <h2>დღის შეთავაზება</h2>
+        {isLoading ? <div className="loader"></div> :(
         <div className='container'>
-        {
+        { 
         products.map(item =>( 
             <div className='items_div'>
                 <img className='img' src={item.image} />
@@ -26,9 +29,9 @@ function ShoppingPage() {
                 <button className='add_button'>Add To Cart</button>
             </div>  
         ))
-        }
-        
+        }        
         </div>
+        )}
     </>
   )
 }

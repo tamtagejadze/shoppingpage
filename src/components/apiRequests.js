@@ -11,4 +11,5 @@ export default function apiRequests(method,endpoint, data,headers ={}){
         headers : {... defaultHEader,...headers}
 
 })
+.then(response => response.data)
 }

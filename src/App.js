@@ -1,10 +1,15 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
 import './App.css';
 import Landing from './components/Landing';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className="App">
-    <Landing/>        
+    <QueryClientProvider client={queryClient}>
+      <Landing/> 
+    </QueryClientProvider>         
     </div>
   );
 }
