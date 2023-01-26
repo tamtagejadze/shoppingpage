@@ -37,6 +37,22 @@ li {
     cursor: pointer;
 }
 
+.flag {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .geo {
+    width: 35px;
+    cursor: pointer;
+  }
+
+  .eng {
+    width: 35px;
+    cursor: pointer;
+  }
+
 .nav-bottom {
     margin-left: 30px;
 }

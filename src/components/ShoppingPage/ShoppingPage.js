@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import apiRequests from '../apiRequests';
 
 function ShoppingPage() {
+    const {t}=useTranslation()
     const [products, setProducts] = useState([]);
     const {data, isLoading} = useQuery("products", () => apiRequests('GET', "products"));
     
@@ -16,7 +18,7 @@ function ShoppingPage() {
 
   return (
     <>
-        <h2>დღის შეთავაზება</h2>
+        <h2>{t('OFFER')}</h2>
         {isLoading ? <div className="loader"></div> :(
         <div className='container'>
         { 
