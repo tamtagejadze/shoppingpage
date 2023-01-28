@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
-import apiRequests from '../apiRequests';
+import { Link } from 'react-router-dom';
+import apiRequests from '../../hooks/apiRequests';
 
 function ShoppingPage() {
     const {t}=useTranslation()
     const [products, setProducts] = useState([]);
     const {data, isLoading} = useQuery("products", () => apiRequests('GET', "products"));
     
-    console.log(data);
+    // console.log(data);
 
     useEffect(() =>{
         if(data){
@@ -23,12 +24,12 @@ function ShoppingPage() {
         <div className='container'>
         { 
         products.map(item =>( 
-            <div className='items_div'>
+            <div className='items_div' key={item.id}>
                 <img className='img' src={item.image} />
                 <span>{item.title}</span>
                 <p>{item.description}</p>
                 <h3>{item.price}</h3>
-                <button className='add_button'>Add To Cart</button>
+                <Link to='/product/:productId'><button className='add_button'>View More</button></Link>
             </div>  
         ))
         }        

@@ -4,5 +4,12 @@
     "MALE": "Male",
     "CHILD": "Child",
     "CONTACT": "Contact",
-    "OFFER": "Offer of the day"
+    "OFFER": "Offer of the day",
+    "PRODUCTNAME": "Product Name",
+    "QUANTITY": "Quantity",
+    "PRICE": "Price",
+    "TOTAL": "Total",
+    "TOTALAMOUNT": "Total Amount:",
+    "BUY": "Buy",
+    "RESET": "Reset Cart"
 }   

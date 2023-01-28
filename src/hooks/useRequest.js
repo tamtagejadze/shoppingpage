@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import apiRequests from "../components/apiRequests";
+import apiRequests from "./apiRequests";
+
 
 export default function useRequest(method,endpoint,apidata){
     const [data, setData] = useState()
