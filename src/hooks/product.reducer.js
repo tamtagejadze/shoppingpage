@@ -1,9 +1,3 @@
-function init(initialCount) { 
-    return {
-        count: initialCount = 0
-    };
-}
-
 export default function productReducer (state,action){
     switch (action.type) {
         case 'increment':
@@ -11,7 +5,7 @@ export default function productReducer (state,action){
         case 'decrement':
             return {count: state.count - 1};  
         case 'reset': 
-            return init(action.payload);   
+            return {count: state.count = 0};   
         default: 
             throw new Error();
     }

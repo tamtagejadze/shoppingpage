@@ -16,11 +16,12 @@ function Product() {
         <Header/>
             
             <div className='container-details'>
-                {/* <img className='img' src={data.image[0]} /> */}
+                <img src={data.image[0]} />
                 <h2>{data.title}</h2>
                 <p>{data.description}</p>
-                <p>{data.category}</p>
+                <span>{data.category}</span>
                 <h3>{data.price}</h3>
+                <button className='add_button'>Add to Cart</button>
             </div>
           
         </div>

@@ -29,7 +29,7 @@ function ShoppingPage() {
                 <span>{item.title}</span>
                 <p>{item.description}</p>
                 <h3>{item.price}</h3>
-                <Link to='/product/:productId'><button className='add_button'>View More</button></Link>
+                <Link to={'/product/'+item.id}><button className='add_button'>View More</button></Link>
             </div>  
         ))
         }        

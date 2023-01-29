@@ -5,8 +5,8 @@ import apiRequests from '../../hooks/apiRequests';
 import productReducer from '../../hooks/product.reducer';
 import Header from '../Header/Header'
 
-function Cart({initialCount}) {
-    const [state, dispatch] = useReducer(productReducer, {count: 0})    
+function Cart() {
+    const [state, dispatch] = useReducer(productReducer,{ count: 1 })    
     const {data} = useQuery("products", () => apiRequests('GET', "products"))
     const {t} = useTranslation();
 
@@ -46,7 +46,7 @@ function Cart({initialCount}) {
               })
             }               
           </div>
-          <button className='cart-reset-btn' onClick={() => dispatch({type: 'reset', payload: initialCount})}>{t('RESET')}</button>
+          <button className='cart-reset-btn' onClick={() => dispatch({type: 'reset'})}>{t('RESET')}</button>
         </div>
         <div className='cart-right'>
             <h3>{t('TOTAL')}</h3>
